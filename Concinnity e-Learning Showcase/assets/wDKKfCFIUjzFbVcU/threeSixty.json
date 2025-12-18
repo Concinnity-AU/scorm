@@ -1,0 +1,27 @@
+{
+  "version": "3.106.35891.0",
+  "course_id": "5rMZbk9kzIR_course_id",
+  "title": "Storyline: Timeline Planner Interaction by Montse",
+  "thumbnail": "story_content/thumbnail.jpg",
+  "scenes": [
+    {
+      "title": "Timeline Planner"
+    }
+  ],
+  "slides": [
+    {
+      "id": "5nRG6Hvr3oz",
+      "title": "Timeline Planner",
+      "scene_index": "1.1"
+    }
+  ],
+  "player": {
+    "name": "unified",
+    "width": 980,
+    "height": 523
+  },
+  "stage": {
+    "width": 720,
+    "height": 405
+  }
+}
