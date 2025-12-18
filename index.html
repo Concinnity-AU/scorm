@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Concinnity SCORM portfolio examples — view-only SCORM module previews." />
+  <title>Concinnity | SCORM Examples</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      /* Concinnity colours */
+      --yellow: #FFC100;
+      --jet: #333333;
+      --snow: #FBF6F4;
+      --linen: #F5E9DF;
+
+      --text-dark: #333333;
+      --text-light: rgba(255, 255, 255, .92);
+      --text-light-muted: rgba(255, 255, 255, .75);
+      --muted: rgba(51, 51, 51, .72);
+
+      --radius-card: 18px;
+      --radius-hero: 28px;
+
+      /* Button radius: pill-style to match rounded CTA feel */
+      --radius-btn: 999px;
+
+      --shadow-hero: 0 18px 44px rgba(0, 0, 0, .35);
+      --shadow-card: 0 12px 26px rgba(0, 0, 0, .22);
+      --shadow-card-hover: 0 18px 40px rgba(0, 0, 0, .32);
+
+      --focus: 0 0 0 4px rgba(255, 193, 0, .35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Lato", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--jet);
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: none;
+      box-shadow: var(--focus);
+      border-radius: 12px;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 18px 54px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 260px;
+    }
+
+    /* No background box behind the logo */
+    .logo {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+    }
+
+    .logo img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-title {
+      font-family: "Comfortaa", system-ui, sans-serif;
+      font-weight: 700;
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      margin: 3px 0 0;
+      font-size: 14px;
+      color: var(--text-light-muted);
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    /* Top links turned into buttons */
+    .top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: var(--radius-btn);
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: transparent;
+      color: rgba(255, 255, 255, .92);
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .14s ease, background .14s ease, border-color .14s ease, color .14s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .top-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 193, 0, .12);
+      border-color: rgba(255, 193, 0, .55);
+      color: rgba(255, 255, 255, .96);
+    }
+
+    .top-btn svg {
+      width: 16px;
+      height: 16px;
+      opacity: .85;
+      flex: 0 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--snow);
+      color: var(--text-dark);
+      border-radius: var(--radius-hero);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-hero);
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: "Comfortaa", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    .lead {
+      margin: 0 0 16px;
+      font-size: 16px;
+      max-width: 72ch;
+      color: rgba(51, 51, 51, .85);
+    }
+
+    .note {
+      background: var(--linen);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: rgba(51, 51, 51, .82);
+    }
+
+    /* Grid / Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      grid-column: span 6;
+      background: var(--snow);
+      color: var(--text-dark);
+      border-radius: var(--radius-card);
+      padding: 20px 20px 18px;
+      box-shadow: var(--shadow-card);
+      transition: transform .16s ease, box-shadow .16s ease;
+      position: relative;
+
+      /* NEW: make card layout consistent */
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* Hover elevation */
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    /* Tag uses linen background */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--linen);
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 12px;
+      margin-bottom: 10px;
+      color: rgba(51, 51, 51, .78);
+    }
+
+    /* Subtle monochrome icon styling */
+    .tag svg {
+      width: 14px;
+      height: 14px;
+      opacity: .55;
+      flex: 0 0 auto;
+    }
+
+    .card h3 {
+      font-family: "Comfortaa", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      margin: 0 0 6px;
+      line-height: 1.2;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    /* Primary button: solid yellow */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: var(--radius-btn);
+      background: var(--yellow);
+      color: var(--jet);
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .12s ease, opacity .12s ease;
+      user-select: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: .92;
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      opacity: .85;
+      flex: 0 0 auto;
+    }
+
+    footer {
+      margin-top: 26px;
+      font-size: 13px;
+      color: var(--text-light-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 860px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .top-actions {
+        justify-content: flex-start;
+      }
+
+      .card {
+        grid-column: span 12;
+      }
+    }
+
+    /* NEW: wrapper so button sits at the bottom consistently */
+    .card .actions {
+      margin-top: auto;
+    }
+
+    /* NEW: single-line disclaimer below cards */
+    .disclaimer-line {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-light-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="assets/concinnity-logo.svg" alt="Concinnity logo" />
+        </div>
+        <div>
+          <p class="brand-title">Concinnity</p>
+          <p class="brand-sub">SCORM Portfolio Examples</p>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <a class="top-btn" href="https://www.concinnity.au/" target="_blank" rel="noopener">
+          <!-- external link icon -->
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          Visit concinnity.au
+        </a>
+
+        <a class="top-btn" href="https://github.com/Concinnity-AU/scorm" target="_blank" rel="noopener">
+          <!-- github icon (simple) -->
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.48 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.63.07-.63 1.01.07 1.54 1.06 1.54 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05.8-.23 1.65-.34 2.5-.34s1.7.12 2.5.34c1.91-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.95.68 1.92 0 1.38-.01 2.49-.01 2.83 0 .26.18.59.69.48A10.02 10.02 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"
+              fill="currentColor" opacity=".9" />
+          </svg>
+          View GitHub repo
+        </a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>SCORM example modules</h1>
+      <p class="lead">
+        A small selection of <strong>view-only</strong> SCORM module previews developed by Concinnity.
+        These examples demonstrate instructional design, interactivity, accessibility, and SCORM-compliant development.
+      </p>
+      <div class="note">
+        <strong>Important:</strong> These modules are provided for demonstration purposes only.
+        No licence is granted for reuse, modification, redistribution, or LMS deployment.
+      </div>
+    </section>
+
+    <section class="grid" aria-label="SCORM examples">
+      <article class="card">
+        <div class="tag">
+          <!-- sparkle icon -->
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l1.2 4.3L17.5 8l-4.3 1.2L12 13.5l-1.2-4.3L6.5 8l4.3-1.7L12 2Z" fill="currentColor" />
+            <path d="M19 12l.7 2.4L22 15l-2.3.6L19 18l-.7-2.4L16 15l2.3-.6L19 12Z" fill="currentColor" />
+          </svg>
+          Showcase
+        </div>
+        <h3>Concinnity eLearning Showcase</h3>
+        <p>A curated overview of Concinnity’s digital learning approach and interactive design.</p>
+        <div class="actions">
+          <a class="btn" href="https://scorm.concinnity.au/Concinnity%20e-Learning%20Showcase/index.html"
+            target="_blank" rel="noopener">
+            View example
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="tag">
+          <!-- book icon -->
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 4h10a2 2 0 0 1 2 2v14H8a2 2 0 0 0-2 2V4Z" stroke="currentColor" stroke-width="2"
+              opacity=".95" />
+            <path d="M6 20V6a2 2 0 0 1 2-2" stroke="currentColor" stroke-width="2" opacity=".95" />
+          </svg>
+          Education
+        </div>
+        <h3>Centre for Indigenous Policy</h3>
+        <p><em>NAT10963001 – A Brief History of Indigenous Australians</em></p>
+        <div class="actions">
+          <a class="btn"
+            href="https://scorm.concinnity.au/NAT10963001%20Part%201%20A%20Brief%20History%20of%20Indigenous%20Australians/index.html#/"
+            target="_blank" rel="noopener">
+            View example
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="tag">
+          <!-- badge/check icon -->
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M12 2l2.2 2.1 3-.2 1.2 2.8 2.6 1.5-.9 3 1.4 2.7-2.3 2.1-.1 3.1-3 .9-1.8 2.5-2.9-1.1-2.9 1.1-1.8-2.5-3-.9-.1-3.1-2.3-2.1 1.4-2.7-.9-3 2.6-1.5 1.2-2.8 3 .2L12 2Z"
+              stroke="currentColor" stroke-width="2" opacity=".9" />
+            <path d="M8.7 12.3l2.2 2.2 4.7-4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          RTO
+        </div>
+        <h3>Volunteering Queensland</h3>
+        <p><em>CHCVOL004 – Manage Volunteer Workforce Development</em></p>
+        <div class="actions">
+          <a class="btn"
+            href="https://scorm.concinnity.au/LG%20CHCVOL004%20-%20Manage%20volunteer%20workforce%20development/index.html"
+            target="_blank" rel="noopener">
+            View example
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="tag">
+          <!-- globe icon -->
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="2" />
+            <path d="M2 12h20" stroke="currentColor" stroke-width="2" opacity=".95" />
+            <path d="M12 2c2.7 2.7 4.2 6.3 4.2 10S14.7 19.3 12 22C9.3 19.3 7.8 15.7 7.8 12S9.3 4.7 12 2Z"
+              stroke="currentColor" stroke-width="2" opacity=".95" />
+          </svg>
+          International
+        </div>
+        <h3>Katalis</h3>
+        <p><em>Pengenalan Peran Dukungan Sumber Daya Manusia</em></p>
+        <div class="actions">
+          <a class="btn"
+            href="https://scorm.concinnity.au/Pengenalan%20peran%20Dukungan%20Sumber%20Daya%20Manusia/index.html#/"
+            target="_blank" rel="noopener">
+
+            View example
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </article>
+    </section>
+    <p class="disclaimer-line">
+      View-only portfolio examples. No licence is granted for use, reuse, modification, redistribution, or commercial
+      exploitation.
+    </p>
+
+    <footer>
+      <span>© <span id="year"></span> Concinnity</span>
+      <span>Interested in similar work? <a href="https://www.concinnity.au/contact" target="_blank"
+          rel="noopener">Contact us</a></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
