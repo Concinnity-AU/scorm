@@ -14,6 +14,30 @@ This repository is **not** intended to be used as a learning library, training r
 
 ---
 
+## Example SCORM Modules
+
+Below are selected **view-only examples** of SCORM modules developed by **Concinnity**.  
+These examples are provided to demonstrate our approach to instructional design, interactivity, accessibility, and SCORM-compliant development.
+
+The links open a **browser-based preview** of each module. They are not provided for download, reuse, or deployment in a Learning Management System.
+
+- **Concinnity eLearning Showcase**  
+  https://scorm.concinnity.au/Concinnity%20e-Learning%20Showcase/index.html
+
+- **Centre for Indigenous Policy**  
+  *NAT10963001 – Part 1: A Brief History of Indigenous Australians*  
+  https://scorm.concinnity.au/NAT10963001%20Part%201%20A%20Brief%20History%20of%20Indigenous%20Australians/index.html#/
+
+- **Volunteering Queensland**  
+  *CHCVOL004 – Manage Volunteer Workforce Development (Learner Guide)*  
+  https://scorm.concinnity.au/LG%20CHCVOL004%20-%20Manage%20volunteer%20workforce%20development/index.html
+
+- **Katalis**  
+  *Pengenalan Peran Dukungan Sumber Daya Manusia*  
+  https://scorm.concinnity.au/Pengenalan%20peran%20Dukungan%20Sumber%20Daya%20Manusia/index.html#/
+
+---
+
 ## Licensing & Usage
 
 🚫 **No licence is granted for use, reuse, modification, redistribution, or commercial exploitation.**
