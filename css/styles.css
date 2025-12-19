@@ -306,15 +306,24 @@ h1{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 10px;                 /* slightly more breathing room */
+  padding: 12px 18px;        /* taller + wider = more confident CTA */
   border-radius: var(--radius-btn);
   background: var(--yellow);
   color: var(--jet);
   font-weight: 900;
   font-size: 14px;
+  line-height: 1;            /* prevents vertical text misalignment */
+  white-space: nowrap;       /* keeps "View example" on one line */
   transition: transform .12s ease, opacity .12s ease;
   user-select:none;
+}
+
+.btn svg{
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;   /* icon never shrinks */
+  opacity: .85;
 }
 
 .btn:hover{

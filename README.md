@@ -25,11 +25,11 @@ The links open a **browser-based preview** of each module. They are not provided
   https://scorm.concinnity.au/Concinnity%20e-Learning%20Showcase/index.html
 
 - **Centre for Indigenous Policy**  
-  *NAT10963001 – Part 1: A Brief History of Indigenous Australians*  
+  *NAT10963001 - Part 1: A Brief History of Indigenous Australians*  
   https://scorm.concinnity.au/NAT10963001%20Part%201%20A%20Brief%20History%20of%20Indigenous%20Australians/index.html#/
 
 - **Volunteering Queensland**  
-  *CHCVOL004 – Manage Volunteer Workforce Development (Learner Guide)*  
+  *CHCVOL004 - Manage Volunteer Workforce Development (Learner Guide)*  
   https://scorm.concinnity.au/LG%20CHCVOL004%20-%20Manage%20volunteer%20workforce%20development/index.html
 
 - **Katalis**  
@@ -42,7 +42,7 @@ The links open a **browser-based preview** of each module. They are not provided
 
 🚫 **No licence is granted for use, reuse, modification, redistribution, or commercial exploitation.**
 
-All content in this repository — including but not limited to:
+All content in this repository - including but not limited to:
 - Course structure
 - Instructional design
 - Text, media, interactions, and assessments
@@ -67,7 +67,7 @@ This repository is designed for:
 - Partners
 - Funding bodies
 - Procurement teams
-- Stakeholders reviewing Concinnity’s digital learning capability
+- Stakeholders reviewing Concinnity's digital learning capability
 
 If you are evaluating Concinnity for a project, these examples provide insight into:
 - Our design quality and attention to detail
@@ -87,7 +87,7 @@ Our work spans:
 - Culturally responsive and accessible learning
 - SCORM-compliant content for a wide range of LMS platforms
 
-We focus on learning that is **purposeful, engaging, and practical** — not just compliant.
+We focus on learning that is **purposeful, engaging, and practical** - not just compliant.
 
 🔗 Learn more: https://www.concinnity.au
 
@@ -98,7 +98,7 @@ We focus on learning that is **purposeful, engaging, and practical** — not jus
 If you would like to:
 - Discuss a custom eLearning or induction solution
 - Commission similar SCORM modules
-- Understand how these examples could translate to your organisation’s needs
+- Understand how these examples could translate to your organisation's needs
 
 Please contact us via our website or reach out directly.
 
