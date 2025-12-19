@@ -1,0 +1,42 @@
+[
+  {
+    "id": "concinnity-elearning-showcase",
+    "title": "Concinnity eLearning Showcase",
+    "description": "A curated overview of Concinnity's digital learning approach and interactive design.",
+    "categoryId": "showcase",
+    "order": 10,
+    "published": true,
+    "url": "https://scorm.concinnity.au/Concinnity%20e-Learning%20Showcase/index.html",
+    "lastUpdated": "2025-02-18"
+  },
+  {
+    "id": "nat10963001-part-1",
+    "title": "Centre for Indigenous Policy",
+    "description": "NAT10963001 - Part 1: A Brief History of Indigenous Australians",
+    "categoryId": "education",
+    "order": 20,
+    "published": true,
+    "url": "https://scorm.concinnity.au/NAT10963001%20Part%201%20A%20Brief%20History%20of%20Indigenous%20Australians/index.html",
+    "lastUpdated": "2025-02-18"
+  },
+  {
+    "id": "chcvol004-learner-guide",
+    "title": "Volunteering Queensland",
+    "description": "CHCVOL004 - Manage Volunteer Workforce Development (Learner Guide)",
+    "categoryId": "rto",
+    "order": 30,
+    "published": true,
+    "url": "https://scorm.concinnity.au/LG%20CHCVOL004%20-%20Manage%20volunteer%20workforce%20development/index.html",
+    "lastUpdated": "2025-02-18"
+  },
+  {
+    "id": "katalis-psdm",
+    "title": "Katalis",
+    "description": "Pengenalan Peran Dukungan Sumber Daya Manusia",
+    "categoryId": "international",
+    "order": 40,
+    "published": true,
+    "url": "https://scorm.concinnity.au/Pengenalan%20peran%20Dukungan%20Sumber%20Daya%20Manusia/index.html",
+    "lastUpdated": "2025-02-18"
+  }
+]

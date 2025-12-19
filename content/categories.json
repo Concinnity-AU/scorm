@@ -1,0 +1,6 @@
+[
+  { "id": "showcase", "name": "Showcase", "icon": "auto_awesome" },
+  { "id": "education", "name": "Education", "icon": "menu_book" },
+  { "id": "rto", "name": "RTO", "icon": "verified" },
+  { "id": "international", "name": "International", "icon": "public" }
+]
