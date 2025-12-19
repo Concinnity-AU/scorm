@@ -1,27 +1,46 @@
-## SCORM Portfolio Landing Page - Feature Reference
+## Architecture Overview (Current)
 
-### Current features
-- **GitHub Pages + custom domain**: Static site hosted via GitHub Pages on `scorm.concinnity.au`.
-- **Data-driven listings**: Example cards are generated from JSON:
-  - `content/modules.json` (examples, URLs, ordering, publish state, metadata)
-  - `content/categories.json` (category name + Material icon)
-- **Category filtering**: Filter chips are generated from `categories.json`.
-- **Ordering**: Examples are sorted by `order` (ascending) from `modules.json`.
-- **Hard-coded external URLs supported**: Examples link to existing published URLs (no file move required).
-- **Externalised assets**:
-  - CSS: `css/styles.css`
-  - JS: `js/app.js`
-- **Loading skeletons**: Skeleton cards display while JSON loads.
-- **Graceful fallback**:
-  - If JSON fails to load, a professional fallback message is shown.
-  - If JavaScript is disabled, a `<noscript>` notice is shown.
-- **Per-module metadata**: Optional `lastUpdated` date displayed per example.
-- **Analytics hooks**: Clicking "View example" triggers an event hook (GA4/Plausible compatible).
+````md
+[Visitor Browser]
+   |
+   |  GET https://scorm.concinnity.au/
+   v
+[GitHub Pages - Static Site]
+   |
+   |-- index.html
+   |-- css/styles.css
+   |-- js/app.js
+   |-- content/categories.json
+   |-- content/modules.json
+   |
+   |  app.js loads JSON and renders cards/filters
+   v
+[Rendered Landing Page]
+   |
+   |-- Each card links to a hard-coded SCORM URL
+   v
+[SCORM Example Content]
+   |
+   |-- Hosted as extracted HTML folders within the same GitHub Pages site
+   |   (existing paths retained to avoid breaking external links)
+````
 
-### Future (optional) features
-- **GitHub Actions publishing workflow**: Upload a SCORM ZIP + metadata to auto-publish and update JSON.
-- **Unpublish vs delete management**: Hide examples or remove files entirely via workflow.
-- **Category management workflow**: Add/edit/remove categories and icons safely.
-- **Reorder workflow**: Adjust ordering without manually editing JSON.
-- **Redirect support for moved modules**: If modules are moved to `/modules/`, old links can be preserved with per-page redirects.
-- **External storage for scale**: Host SCORM packages on CDN/object storage if Pages size limits become a concern.
+## Architecture Overview (Future - Optional Publishing Workflow)
+
+````md
+[Staff]
+  |
+  | Run GitHub Action: "Publish SCORM Example"
+  | Upload ZIP + metadata (title/desc/category/order)
+  v
+[GitHub Actions Workflow]
+  |
+  |-- Unzip + validate package structure
+  |-- Add/update content in repo OR upload to external storage
+  |-- Update content/modules.json
+  v
+[GitHub Pages Redeploy]
+  |
+  v
+[Visitor sees updated landing page automatically]
+````
